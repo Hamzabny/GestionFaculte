@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\EmployesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +34,16 @@ Route::get('/students/signup',[StudentController::class, 'showSignUpForm'])->nam
 Route::post('/students/signup',[StudentController::class, 'processSignUpEtudiant'])->name('students.signup.submit');
 Route::get('loginStudent', [StudentController::class, 'loginStudent'])->name('loginStudent');
 Route::post('postloginStudent', [StudentController::class, 'postloginStudent'])->name('postloginStudent'); 
+ 
+
+//admin route
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('/InterfaceAdmin', function () {
+        return view('InterfaceAdmin');
+    })->name('InterfaceAdmin');
+    Route::resource('employes', EmployesController::class);
+    Route::get('employes/{id}/certificate', [EmployesController::class, 'getWorkCertificate'])
+        ->name('work.certificate');
+    Route::get('employes/{id}/vacation', [EmployesController::class, 'vacationRequest'])
+        ->name('work.vacation');
+});
