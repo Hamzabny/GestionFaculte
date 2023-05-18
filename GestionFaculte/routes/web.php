@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +24,7 @@ Route::post('postlogin', [CustomAuthController::class, 'login'])->name('postlogi
 Route::get('signup', [CustomAuthController::class, 'signup'])->name('register-user');
 Route::post('postsignup', [CustomAuthController::class, 'signupsave'])->name('postsignup'); 
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
+Route::get('/students/signup',[StudentController::class, 'showSignUpForm'])->name('registrationStudent');
+Route::post('/students/signup',[StudentController::class, 'processSignUpEtudiant'])->name('students.signup.submit');
+Route::get('loginStudent', [StudentController::class, 'loginStudent'])->name('loginStudent');
+Route::post('postloginStudent', [StudentController::class, 'postloginStudent'])->name('postloginStudent'); 

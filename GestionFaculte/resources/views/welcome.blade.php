@@ -102,7 +102,7 @@
 
 						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
 							<div class="img-wrap"  itemprop="image"><img src="assets/images/course-pic.jpg" alt="courses picture"></div>
-								<a href="{{ route('login') }}" class="learn-desining-banner" itemprop="name">Login</a>
+								<a href="{{ route('registrationStudent') }}" class="learn-desining-banner" itemprop="name">Login</a>
 							<div class="box-body" itemprop="description">
 								<p>this for Student Login</p>
 							</div>
