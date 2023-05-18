@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\EmployesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +19,12 @@ use App\Http\Controllers\StudentController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('InterfaceAdmin', [CustomAuthController::class, 'InterfaceAdmin'])
+    ->middleware('auth')
+    ->name('InterfaceAdmin');
+
 Route::get('/home', [CustomAuthController::class, 'home']); 
-Route::get('dashboard', [CustomAuthController::class, 'dashboard']); 
+//Route::get('dashboard', [CustomAuthController::class, 'dashboard']); 
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('postlogin', [CustomAuthController::class, 'login'])->name('postlogin'); 
 Route::get('signup', [CustomAuthController::class, 'signup'])->name('register-user');
@@ -28,3 +34,20 @@ Route::get('/students/signup',[StudentController::class, 'showSignUpForm'])->nam
 Route::post('/students/signup',[StudentController::class, 'processSignUpEtudiant'])->name('students.signup.submit');
 Route::get('loginStudent', [StudentController::class, 'loginStudent'])->name('loginStudent');
 Route::post('postloginStudent', [StudentController::class, 'postloginStudent'])->name('postloginStudent'); 
+
+
+//Route Admin
+// Route::get('/loginAdmin', function () {
+//     return view('loginAdmin');
+// })->name('LoginAdmin');
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('/InterfaceAdmin', function () {
+        return view('InterfaceAdmin');
+    })->name('InterfaceAdmin');
+    Route::resource('employes', EmployesController::class);
+    Route::get('employes/{id}/certificate', [EmployesController::class, 'getWorkCertificate'])
+        ->name('work.certificate');
+    Route::get('employes/{id}/vacation', [EmployesController::class, 'vacationRequest'])
+        ->name('work.vacation');
+});

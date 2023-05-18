@@ -29,7 +29,7 @@ class CustomAuthController extends Controller
     
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
+            return redirect()->intended('admin/InterfaceAdmin')
                         ->with('message', 'Signed in!');
         }
    
@@ -64,14 +64,20 @@ class CustomAuthController extends Controller
       ]);
     }    
      
-    public function dashboard()
+    // public function dashboard()
+    // {
+    //     if(Auth::check()){
+    //         return view('dashboard');
+    //     }
+    //     return redirect('/login');
+    // }
+    public function InterfaceAdmin()
     {
         if(Auth::check()){
-            return view('dashboard');
+            return view('InterfaceAdmin');
         }
         return redirect('/login');
     }
-     
     public function signOut() {
         Session::flush();
         Auth::logout();
