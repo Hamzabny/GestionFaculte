@@ -41,9 +41,22 @@
                     <div class="form-group mb-3">
                         <label for="fullname" class="form-label fw-bold">Departement</label>
                         <div class="border border-secondary rounded p-2">
-                            {{$employe->depart}}
+                            {{$employe->departement->Nom_Departement}}
                         </div>
                     </div>
+                    <div class="form-group mb-3">
+                        <label for="fullname" class="form-label fw-bold">Classe</label>
+                        <div class="border border-secondary rounded p-2">
+                            {{$employe->classe->Nom_Classe}}
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="fullname" class="form-label fw-bold">Matiere</label>
+                        <div class="border border-secondary rounded p-2">
+                            {{$employe->matiere->Nom_Matiere}}
+                        </div>
+                    </div>
+                  
                     <div class="form-group mb-3">
                         <label for="fullname" class="form-label fw-bold">Hired Since</label>
                         <div class="border border-secondary rounded p-2">

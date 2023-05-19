@@ -29,7 +29,7 @@ class CustomAuthController extends Controller
     
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('admin/InterfaceAdmin')
+            return redirect()->intended('/admin/InterfaceAdmin')
                         ->with('message', 'Signed in!');
         }
    

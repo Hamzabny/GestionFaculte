@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classe;
 use App\Models\Employe;
+use App\Models\Matiere;
+use App\Models\Departement;
 use Illuminate\Http\Request;
 
 class EmployesController extends Controller
@@ -27,10 +30,17 @@ class EmployesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
-        return view('employes.create');
-    }
+{
+    $classes = Classe::all();
+    $matieres = Matiere::all();
+    $departements = Departement::all();
+    
+    return view('employes.create')->with([
+        'classes' => $classes,
+        'matieres' => $matieres,
+        'departements' => $departements
+    ]);
+}
 
     /**
      * Store a newly created resource in storage.
@@ -39,23 +49,32 @@ class EmployesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-        $this->validate($request, [
-            'fullname' => 'required',
-            'registration_number' => 'required|unique:employes',
-            'depart' => 'required',
-            'hire_date' => 'required',
-            'city' => 'required',
-            'phone' => 'required|numeric',
-            'address' => 'required'
-        ]);
-        $data = $request->except(['_token']);
-        Employe::create($data);
-        return redirect()->route("employes.index")->with([
-            "success" => "Employe added successfully"
-        ]);
-    }
+{
+    $this->validate($request, [
+        'fullname' => 'required',
+        'registration_number' => 'required|unique:employes',
+        'classe_id' => 'required',
+        'matiere_id' => 'required',
+        'departement_id' => 'required',
+        'hire_date' => 'required',
+        'city' => 'required',
+        'phone' => 'required|numeric',
+        'address' => 'required'
+    ]);
+
+    $data = $request->except(['_token']);
+    $data['classe_id'] = $request->input('classe_id');
+    $data['matiere_id'] = $request->input('matiere_id');
+    $data['departement_id'] = $request->input('departement_id');
+
+    Employe::create($data);
+
+    return redirect()->route("employes.index")->with([
+        "success" => "Employe added successfully"
+    ]);
+}
+
+
 
     /**
      * Display the specified resource.
@@ -65,12 +84,13 @@ class EmployesController extends Controller
      */
     public function show($id)
     {
-        //
-        $employe = Employe::where('registration_number', $id)->first();
+        $employe = Employe::where('registration_number', $id)->with('classe', 'matiere', 'departement')->first();
+        
         return view("employes.show")->with([
             "employe" => $employe
         ]);
     }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -80,12 +100,19 @@ class EmployesController extends Controller
      */
     public function edit($id)
     {
-        //
         $employe = Employe::where('registration_number', $id)->first();
+        $classes = Classe::all();
+        $matieres = Matiere::all();
+        $departements = Departement::all();
+        
         return view("employes.edit")->with([
-            "employe" => $employe
+            "employe" => $employe,
+            "classes" => $classes,
+            "matieres" => $matieres,
+            "departements" => $departements
         ]);
     }
+    
 
     /**
      * Update the specified resource in storage.
@@ -96,19 +123,27 @@ class EmployesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $employe = Employe::where('registration_number', $id)->first();
+    
         $this->validate($request, [
             'fullname' => 'required',
             'registration_number' => 'required|unique:employes,id,' . $employe->id,
-            'depart' => 'required',
+            'classe_id' => 'required',
+            'matiere_id' => 'required',
+            'departement_id' => 'required',
             'hire_date' => 'required',
             'city' => 'required',
             'phone' => 'required|numeric',
             'address' => 'required'
         ]);
+    
         $data = $request->except(['_token', '_method']);
+        $data['classe_id'] = $request->input('classe_id');
+        $data['matiere_id'] = $request->input('matiere_id');
+        $data['departement_id'] = $request->input('departement_id');
+    
         $employe->update($data);
+    
         return redirect()->route("employes.index")->with([
             "success" => "Employe updated successfully"
         ]);

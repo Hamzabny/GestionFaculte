@@ -37,7 +37,7 @@
                                 <tr>
                                     <td>{{$key+=1}}</td>
                                     <td>{{$employe->fullname}}</td>
-                                    <td>{{$employe->depart}}</td>
+                                    <td>{{ $employe->departement->Nom_Departement }}</td>
                                     <td>{{$employe->hire_date}}</td>
                                     <td class="d-flex justify-content-center align-items-center">
                                         <a href="{{route("employes.show",$employe->registration_number)}}"

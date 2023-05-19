@@ -14,7 +14,7 @@
             <div class="card my-5">
                 <div class="card-header bg-white text-center p-3">
                     <h3 class="text-dark">
-                        Update employe
+                        Update : {{$employe->fullname}}
                     </h3>
                 </div>
                 <div class="card-body">
@@ -30,9 +30,36 @@
                             <input type="text" name="registration_number" value="{{old("registration_number",$employe->registration_number)}}"  placeholder="Registration Number" class="form-control">
                         </div>
                         <div class="form-group mb-3">
-                            <label class="form-label fw-bold" for="depart">Departement</label>
-                            <input type="text" class="form-control" value="{{old("depart",$employe->depart)}}"  name="depart" placeholder="Departement">
+                            <label class="form-label fw-bold" for="depart">Department</label>
+                            <select class="form-control" name="departement_id">
+                                @foreach($departements as $departement)
+                                    <option value="{{ $departement->id }}" {{ $employe->departement_id == $departement->id ? 'selected' : '' }}>
+                                        {{ $departement->Nom_Departement }}
+                                    </option>
+                                @endforeach
+                            </select>
                         </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label fw-bold" for="depart">Classe</label>
+                            <select class="form-control" name="classe_id">
+                                @foreach($classes as $classe)
+                                    <option value="{{ $classe->id }}" {{ $employe->classe_id == $classe->id ? 'selected' : '' }}>
+                                        {{ $classe->Nom_Classe }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label fw-bold" for="depart">Matiere</label>
+                            <select class="form-control" name="matiere_id">
+                                @foreach($matieres as $matiere)
+                                    <option value="{{ $matiere->id }}" {{ $employe->matiere_id == $matiere->id ? 'selected' : '' }}>
+                                        {{ $matiere->Nom_Matiere }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        
                         <div class="form-group mb-3">
                             <label class="form-label fw-bold" for="hire_date">Hiring Date</label>
                             <input type="date" class="form-control" value="{{old("hire_date",$employe->hire_date)}}"  placeholder="Hiring Date" name="hire_date">
