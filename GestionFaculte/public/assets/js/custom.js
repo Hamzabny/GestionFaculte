@@ -44,30 +44,7 @@ $('.owl-one').owlCarousel({
     }
 });
 
-$('.owl-two').owlCarousel({
-    loop:true,
-    margin:30,
-    responsiveClass:true,
-    // nav: true,
-    navText: ["<",">"],
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        768:{
-            items:2,
-            nav:true,
-            loop:true,
-            margin:10
-        },
-        1024:{
-            items:2,
-            nav:true,
-            loop:true
-        }
-    }
-});
+
 
 $('.owl-three').owlCarousel({
     loop:true,
@@ -88,38 +65,22 @@ $('.owl-three').owlCarousel({
             items:5,
             nav:true,
             loop:true
-        }
+        },
     }
 });
 
 
 // For Banner Slider Home Page
-$('.owl-four').owlCarousel({
-    loop:true,
-    responsiveClass:true,
-    nav: true,
-    dots: false,
-    navContainer: '#owl-four-nav',
-    navText: ["<",">"],
-    responsive:{
-        0:{
-            items:1,
-            nav:true,
-            loop:true
-        },
-        600:{
-            items:1,
-            nav:true,
-            loop:true
-        },
-        1000:{
-            items:1,
-            nav:true,
-            loop:true
-        }
-    }
-});
 
+
+$(document).ready(function() {
+    $('.owl-four').owlCarousel({
+      items: 1,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 5000, // Adjust the time interval between image changes (in milliseconds)
+    });
+  });
 // Owl Carousel For Video
 $('.owl-five').owlCarousel({
         items:1,
@@ -177,7 +138,7 @@ $('.three').owlCarousel({
  $(function () {
  
   $(".rateYo").rateYo({
-    rating: 2,
+    rating: 3,
     starWidth: "20px"
   });
  

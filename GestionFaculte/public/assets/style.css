@@ -682,29 +682,37 @@ a:hover, a:active {
 
 /*=================Menu Navigation===============*/
 
-.main-header .container {
-	display: flex;
+.main-header {
+	display: block;
 	flex: 1;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	padding-top: 1.375em;
-	padding-bottom: 1.375em;
+	background-image: linear-gradient(to right, #f9f8f8, #ccc); /* Dégradé de couleur gris de gauche à droite */
+	border: 1px solid #000; /* Bordure d'une épaisseur de 1px de couleur noire */
 }
 
 
 .nav-desktop {
 	display: inline-block;
+	margin-left: -20em;
 }
 
 .nav-desktop li, .nav-desktop li a{
-	font-size: 1.8rem;
+	font-size: 2rem;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 600;
+    padding: 2.1em;
 	color: #3a3a3a;
 }
 
 .nav-desktop li {
 	padding: 1.6rem;
+	border-right: 2px solid black; /* Bordure verticale d'une épaisseur de 1px de couleur verte */
+
+}
+
+.nav-desktop li:hover {
+	background: rgba(0,0,0,0.12);
 }
 
 .nav-desktop ul ul {
@@ -723,7 +731,6 @@ ul > li {
 
 .nav-desktop .sub-menu {
 	top: 100%;
-	left: 0;
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -739,7 +746,7 @@ ul > li {
 	border: 1px solid #1f4271;
 	top: 0;
 	width: 35%;
-	left: 3%;
+	left: 0%;
 	cursor: pointer;
 }
 
@@ -752,6 +759,7 @@ ul > li {
 	display: block;
 	z-index: 999;
 	width: 20rem;
+	padding: 10em;
 	padding-left: 0;
 	text-align: left;
 }
@@ -785,11 +793,12 @@ ul > li {
 /*===============Banner Images===========*/
 .banner {
 	position: relative;
-	margin-bottom: -8px;
+	margin-bottom: -1em;
 }
 
 .banner img {
 	width: 100%;
+	height: 60em;
 }
 
 .banner .container {
@@ -807,7 +816,7 @@ ul > li {
 	/*font-size: 4rem;*/
 	font-weight: bold;
 	text-transform: uppercase;
-	margin-top: 5em;
+	margin-top: 12em;
 }
 
 .banner .container h3 {
@@ -955,7 +964,7 @@ ul > li {
 }
 
 .learn-courses .box-wrap {
-	width: 100%;
+	width: 90%;
 }
 
 .learn-courses .box-wrap, .recent-course-single .grid-item{
@@ -966,7 +975,8 @@ ul > li {
 .learn-courses .box-wrap .img-wrap, 
 .course-listing-page .grid-item .img-wrap, 
 .recent-course-single .grid-item .img-wrap{
-	margin-bottom: -7px;
+	width: 90%;
+	height: 40em;
 }
 
 .learn-courses .learn-desining-banner,
@@ -974,19 +984,13 @@ ul > li {
 .recent-course-single .grid-item .learn-desining-banner-course {
 	position: absolute;
 	left: 5%;
-	top: 44%;
-	/*background: #009450;*/
+	top: 60%;
+	background: #336ef9;
 	padding: 0.9375em 3.5625em 1em 3.5625em;
-	/*font-size: 1.8rem;*/
-	/*font-family: "Raleway", sans-serif;*/
-	/*color: #fff;*/
-	/*text-decoration: none;*/
+   
 }
 
-.course-listing-page .grid-item .learn-desining-banner-course, 
-.recent-course-single .grid-item .learn-desining-banner-course{
-	/*background: #1c3961;*/
-}
+
 
 .learn-courses .box-wrap .box-body, 
 .course-listing-page .grid-item .box-body,
@@ -994,6 +998,7 @@ ul > li {
 	border: 1px solid #b7b7b7;
 	padding: 1.25em;
 	padding-top: 2.8125em;
+	background: rgba(0,0,0,0.12);
 }
 
 .learn-courses .box-body p, 
@@ -1011,9 +1016,6 @@ ul > li {
 	margin-bottom: 2.1428em;
 }
 
-.learn-courses .box-body section p {
-	/*font-family: 'Raleway', sans-serif;*/
-}
 
 .learn-courses .box-body p span , 
 .course-listing-page .grid-item .box-body p span,
@@ -1090,9 +1092,7 @@ ul > li {
     border-radius: 3px;
     text-align: center;
     cursor: pointer;
-    h1 {
-      font-size: 18px;
-    }
+ 
   }
 
   .current .item{
@@ -1115,7 +1115,6 @@ ul > li {
   }
 }
 
-//arrows on first carousel
 #sync1.owl-theme {
   position: relative;
   .owl-next, .owl-prev {

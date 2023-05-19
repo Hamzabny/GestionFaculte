@@ -19,7 +19,7 @@
 <body>
 	<div id="page" class="site" itemscope itemtype="http://schema.org/LocalBusiness">
 		<header class="site-header">
-			<div class="top-header">
+			{{-- <div class="top-header">
 				<div class="container">
 					<div class="top-header-left">
 						<div>
@@ -27,40 +27,36 @@
 						<h2 class="text-white">المعهد العالي للدراسات التكنولوجية ببنزرت</h2>
 						</div>
 					</div>
-				</div>
-			</div>
+				</div> --}}
+		
 			<div class="banner">
-			<div class="owl-four owl-carousel" itemprop="image">
+			   <div class="owl-four owl-carousel" itemprop="image">
 				<img src="assets/images/page-banner.jpg" alt="Image of Bannner">
-				<img src="assets/images/page-banner2.jpg" alt="Image of Bannner">
-				<img src="assets/images/page-banner3.jpg" alt="Image of Bannner">
-			</div>
-			<div class="container" itemprop="description">
+				<img src="assets/images/page-banner.jpg" alt="Image of Bannner">
+				<img src="assets/images/page-banner.jpg" alt="Image of Bannner">
+			   </div>
+			  <div class="container" itemprop="description">
 				<h1>welcome in our website</h1>
 				<h3>With our advance search feature you can now find the trips for you...</h3>
-			</div>
-			 <div id="owl-four-nav" class="owl-nav"></div>
-		</div>
-	
+			  </div>
+		    </div>
 			<!-- Top header Close -->
-		<!--	<div class="main-header">
+			<div class="main-header">
 				<div class="container">
-					<div class="logo-wrap" itemprop="logo">
+					{{-- <div class="logo-wrap" itemprop="logo">
 						<img src="assets/images/site-logo.jpg" alt="Logo Image">
-					</div>
+					</div> --}}
 					<div class="nav-wrap">
 						<nav class="nav-desktop">
 							<ul class="menu-list">
 								<li><a href="#">Home</a></li>
-								<li class="menu-parent">Courses
-									<ul class="sub-menu">
-										<li><a href="#">mathematiques</a></li>
-										<li><a href="#">javascript</a></li>
-										<li class="menu-parent">python
-										</li>
-									</ul>
-								</li>
-								<li><a href="">Contact</a></li>
+								<li><a href="">Nouveautés</a></li>
+								<li><a href="">Institut</a></li>
+								<li><a href="">Département</a></li>
+								<li><a href="">Formation</a></li>
+								<li><a href="">Bibliothéque</a></li>
+								<li><a href="">Consultation</a></li>
+						
 							</ul>
 						</nav>
 						<div id="bar">
@@ -71,13 +67,13 @@
 						</div>
 					</div>
 				</div>
-			</div>-->
+			</div>
 		</header>
 		<!-- Header Close -->
 		
 		<div class="page-heading">
 			<div class="container">
-				<h2>Sign In & Sign Up</h2>
+				<h2>SERVICES WE OFFER</h2>
 			</div>
 		</div>
 		<!-- sign in head End -->
@@ -86,25 +82,25 @@
 				<div class="courses">
 					<div class="owl-one owl-carousel">
 						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-							<div class="img-wrap" itemprop="image"><img src="assets/images/course-pic.jpg" alt="courses picture"></div>
+							<div class="img-wrap" itemprop="image"><img src="assets/images/directeur2.jpg" alt="courses picture"></div>
 							<a href="{{ route('login') }}" class="learn-desining-banner" itemprop="name">Login</a>
 							<div class="box-body" itemprop="description">
-								<p>this for Director Login</p>
+								<h2>Director space</h2>
 							</div>
 						</div>
 
-						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-							<div class="img-wrap"  itemprop="image"><img src="assets/images/course-pic.jpg" alt="courses picture"></div>
+							<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
+							<div class="img-wrap"  itemprop="image"><img src="assets/images/employe1.jpg" alt="courses picture"></div>
 								<a href="{{ route('login') }}" class="learn-desining-banner" itemprop="name">Login</a>							<div class="box-body" itemprop="description">
-								<p>this for Employee Login 1</p>
+								<h2>Managers space</h2>
 							</div>
 						</div>
 
 						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-							<div class="img-wrap"  itemprop="image"><img src="assets/images/course-pic.jpg" alt="courses picture"></div>
+							<div class="img-wrap"  itemprop="image"><img src="assets/images/etudiants1.png" alt="courses picture"></div>
 								<a href="{{ route('registrationStudent') }}" class="learn-desining-banner" itemprop="name">Login</a>
 							<div class="box-body" itemprop="description">
-								<p>this for Student Login</p>
+								<h2>Students space</h2>
 							</div>
 						</div>
 					</div>
@@ -125,7 +121,7 @@
 					</div>
 					<div class="details">
 						<a href=""><h3 itemprop="name">Orientation Programme for new Students.</h3></a>
-						<p itemprop="description">Orientation Programme for new sffs Students. Orientation Programme for new sffs Students. Orientation Programme for new sffs Students.</p>
+						<p itemprop="description">Orientation Programme for new sffs Students</p>
 
 						<h5 itemprop="startDate"><i class="far fa-clock"></i> Dec 30,2018 | 11am</h5>
 						<h5 itemprop="location"><i class="fas fa-map-marker-alt"></i> Iset Bizerte, manzelAbdRahmen</h5>
@@ -156,17 +152,12 @@
 						<div class="border">
 							<div class="customer">
 								<figure>
-									<img class="customer-img" src="images/customer-img.jpg" alt="Person image">
+									<img class="customer-img" src="assets/images/diplome.png" alt="Person image">
 									<figcaption>
-										<span itemprop="author">Mohammed Amin</span>
+										<span itemprop="author">Atia Naim</span>
 										<div class="rateYo" itemprop="ratingValue"></div>
 									</figcaption>
 								</figure>
-							</div>
-							<div class="customer-review">
-								<p itemprop="description">
-									"......................."
-								</p>
 							</div>
 						</div>
 					</div>
@@ -174,17 +165,16 @@
 						<div class="border">
 							<div class="customer">
 								<figure>
-									<img class="customer-img" src="images/customer-img.jpg" alt="Person image">
+									<img class="customer-img" src="assets/images/diplome.png" alt="Person image">
 									<figcaption>
-										<span itemprop="author">Oussama Maali</span>
+										<span itemprop="author">Hamza Ben youness</span>
 										<div class="rateYo" itemprop="ratingValue"></div>
 									</figcaption>
 								</figure>
 							</div>
-							<div class="customer-review">
-								<p itemprop="description">
-								"....................................."
-								</p>
+							</div>
+						</div>
+					</div>			
 							</div>
 						</div>
 					</div>
@@ -239,7 +229,7 @@
 			</div>
 			<div class="footer-last-section">
 				<div class="container">
-					<p>Copyright 2023 &copy; isetBizerte.com <span> | </span>  designed and developed by hamza</p>
+					<p>Copyright 2023 &copy; isetBizerte.com <span> | </span>  designed and developed by Software superstar</p>
 				</div>
 			</div>
 		</footer>
