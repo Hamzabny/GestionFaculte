@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\EmployesController;
 use App\Http\Controllers\CustomAuthController;
@@ -43,7 +44,7 @@ Route::post('/professeur/save-student/{id}',[ProfesseurController::class,'update
 Route::get('/professeur/delete-student/{id}',[ProfesseurController::class,'deleteStudent']);
 
 //admin route
-Route::prefix('admin')->middleware('auth')->group(function () {
+Route::prefix('admin')->middleware('auth','isAdmin')->group(function () {
     Route::get('/InterfaceAdmin', function () {
         return view('InterfaceAdmin');
     })->name('InterfaceAdmin');
@@ -53,3 +54,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('employes/{id}/vacation', [EmployesController::class, 'vacationRequest'])
         ->name('work.vacation');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
