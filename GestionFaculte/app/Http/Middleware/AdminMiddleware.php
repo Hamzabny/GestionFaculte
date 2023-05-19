@@ -20,6 +20,7 @@ class AdminMiddleware
         if(Auth::check()) {
  // admin role ==1
  //user role ==0
+ // professeur role==2
          if(Auth::user()->role == '1') {
         return $next($request);
          } else {
