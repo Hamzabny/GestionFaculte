@@ -9,6 +9,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">Liste Etudiant</a>
+            <a class="navbar-brand" href="{{ url('/professeur/InterfaceProfesseur') }}">Dashboard</a>
         </div>
     </nav>
 

@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Gate;
 return [
 
     /*
@@ -311,6 +311,17 @@ return [
                     'text' => 'Create',
                     'url'  => 'admin/employes/create',
                     'icon' => 'fas fa-fw fa-user-plus',
+                ],
+            ],
+        ],
+        [
+            'text' => 'Etudiant',
+            'icon' => 'fas fa-fw fa-arrow-alt-circle-right',
+            'submenu' =>[
+                [
+                'text' => 'List of etudiant',
+                'url'  => 'professeur/etudiant-list',
+                'icon' => 'fas fa-fw fa-list',
                 ],
             ],
         ],

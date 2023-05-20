@@ -35,14 +35,20 @@ Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout')
 Route::get('/students/signup',[StudentController::class, 'showSignUpForm'])->name('registrationStudent');
 Route::post('/students/signup',[StudentController::class, 'processSignUpEtudiant'])->name('students.signup.submit');
 Route::get('loginStudent', [StudentController::class, 'loginStudent'])->name('loginStudent');
-Route::post('postloginStudent', [StudentController::class, 'postloginStudent'])->name('postloginStudent'); 
-Route::get('/professeur/etudiant-list',[ProfesseurController::class, 'index']);
-//edit
-Route::get('/professeur/edit-student/{id}',[ProfesseurController::class,'editStudent']);
-Route::post('/professeur/save-student/{id}',[ProfesseurController::class,'updateStudent']);
-//delete
-Route::get('/professeur/delete-student/{id}',[ProfesseurController::class,'deleteStudent']);
+Route::post('postloginStudent', [StudentController::class, 'postloginStudent'])->name('postloginStudent');
+Route::prefix('professeur')->middleware('auth','isProfesseur')->group(function () {
+    Route::get('/InterfaceProfesseur', function () {
+        return view('InterfaceProfesseur');
+    })->name('InterfaceProfesseur');
+    Route::get('/etudiant-list', [ProfesseurController::class, 'index'])->name('professeur.etudiant-list');
 
+    // Edit
+    Route::get('/edit-student/{id}', [ProfesseurController::class, 'editStudent']);
+    Route::post('/save-student/{id}', [ProfesseurController::class, 'updateStudent']);
+
+    // Delete
+    Route::get('/delete-student/{id}', [ProfesseurController::class, 'deleteStudent']);
+});
 //admin route
 Route::prefix('admin')->middleware('auth','isAdmin')->group(function () {
     Route::get('/InterfaceAdmin', function () {

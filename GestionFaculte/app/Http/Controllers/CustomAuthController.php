@@ -30,9 +30,13 @@ class CustomAuthController extends Controller
     
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
+            if(Auth::user()->role == 1){
             return redirect()->intended('/admin/InterfaceAdmin')
                         ->with('message', 'Signed in!');
+        }else if(Auth::user()->role == 2){
+            return redirect()->intended('/professeur/InterfaceProfesseur');
         }
+    }
    
         return redirect('/login')->with('message', 'Login details are not valid!');
     }
