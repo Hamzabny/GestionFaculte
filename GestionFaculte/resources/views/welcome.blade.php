@@ -158,6 +158,7 @@
 										<div class="rateYo" itemprop="ratingValue"></div>
 									</figcaption>
 								</figure>
+							<h2>we are proud of this work</h2>
 							</div>
 						</div>
 					</div>
@@ -171,6 +172,7 @@
 										<div class="rateYo" itemprop="ratingValue"></div>
 									</figcaption>
 								</figure>
+								<h2>great job!</h2>
 							</div>
 							</div>
 						</div>
@@ -184,6 +186,7 @@
 										<div class="rateYo" itemprop="ratingValue"></div>
 									</figcaption>
 								</figure>
+								<h2>so intrested!</h2>
 							</div>
 							</div>
 						</div>
@@ -197,6 +200,7 @@
 										<div class="rateYo" itemprop="ratingValue"></div>
 									</figcaption>
 								</figure>
+								<h2>so Amazing!</h2>
 							</div>
 							</div>
 						</div>
