@@ -4,7 +4,7 @@
     <div class="cotainer">
         <div class="row justify-content-center">
             <div class="col-md-4">
-<a class="nav-link" href="{{ route('register-user') }}">Register</a>
+<a class="nav-link" href="{{ route('register-user') }}"><button class="btn btn-dark">Register</button></a>
                 <div class="card">
                     <h3 class="card-header text-center">Login</h3>
                     @if(\Session::has('message'))
