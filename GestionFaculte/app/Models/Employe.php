@@ -11,7 +11,7 @@ class Employe extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['fullname', 'registration_number', 'departement_id', 'classe_id', 'matiere_id', 'hire_date', 'phone', 'address', 'city']; // Include all fillable fields
+    protected $fillable = ['fullname', 'registration_number', 'role' , 'departement_id', 'classe_id', 'matiere_id', 'hire_date', 'phone', 'address', 'city']; // Include all fillable fields
 
     public function departement()
     {

@@ -53,6 +53,7 @@ class EmployesController extends Controller
     $this->validate($request, [
         'fullname' => 'required',
         'registration_number' => 'required|unique:employes',
+        'role' => 'required',
         'classe_id' => 'required',
         'matiere_id' => 'required',
         'departement_id' => 'required',

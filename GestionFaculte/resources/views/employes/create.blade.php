@@ -28,6 +28,13 @@
                             <label class="form-label fw-bold" for="registration_number">Registration Number</label>
                             <input type="text" name="registration_number" value="{{old("registration_number")}}"  placeholder="Registration Number" class="form-control">
                         </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label fw-bold" for="depart">Role</label>
+                            <select class="form-control" name="role">
+                                <option value="CHEFDEP">CHEFDEP</option>
+                                <option value="PROFESSEUR">PROFESSEUR</option>
+                            </select>
+                        </div>
                         
                         <div class="form-group mb-3">
                             <label class="form-label fw-bold" for="depart">Departement</label>

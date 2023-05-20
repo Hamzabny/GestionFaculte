@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('registration_number');
             $table->string('fullname');
-          //  $table->string('depart');
-          $table->unsignedBigInteger('departement_id'); // Foreign key column
-          $table->foreign('departement_id')->references('id')->on('departements');
-          $table->unsignedBigInteger('classe_id'); // Foreign key column
+            $table->String('role');
+            $table->unsignedBigInteger('departement_id'); // Foreign key column
+            $table->foreign('departement_id')->references('id')->on('departements');
+            $table->unsignedBigInteger('classe_id'); // Foreign key column
             $table->foreign('classe_id')->references('id')->on('classes');
             $table->unsignedBigInteger('matiere_id'); // Foreign key column
             $table->foreign('matiere_id')->references('id')->on('matieres');

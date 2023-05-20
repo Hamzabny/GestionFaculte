@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Hash;
 use Session;
 use App\Models\User;
+use App\Models\Employe;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CustomAuthController extends Controller
@@ -42,27 +43,36 @@ class CustomAuthController extends Controller
     }
        
     public function signupsave(Request $request)
-    {  
+    {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
+            'fullname' => 'required|exists:employes,fullname',
+            'registration_number' => 'required|exists:employes,registration_number',
+            'email' => 'required',
             'password' => 'required|min:6',
         ]);
-            
-        $data = $request->all();
-        $check = $this->create($data);
-          
+    
+        $data = $request->only('fullname', 'email', 'registration_number', 'password');
+        $employe = Employe::where('registration_number', $data['registration_number'])->first();
+    
+        $role = ($employe->role == 'CHEFDEP') ? 2 : (($employe->role == 'PROFESSEUR') ? 3 : 0);
+    
+        $user = $this->create($data, $role);
+            // Display the role in the console
+           // dd($role); // or var_dump($role);
+      
         return redirect("login");
     }
- 
-    public function create(array $data)
+    
+    public function create(array $data, $role)
     {
-      return User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'password' => Hash::make($data['password'])
-      ]);
-    }    
+        return User::create([
+            'name' => $data['fullname'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'role' => $role,
+        ]);
+    }
+    
      
     // public function dashboard()
     // {
