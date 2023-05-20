@@ -154,7 +154,7 @@
 								<figure>
 									<img class="customer-img" src="assets/images/diplome.png" alt="Person image">
 									<figcaption>
-										<span itemprop="author">Atia Naim</span>
+										<span itemprop="author">Hamza Ben younes</span>
 										<div class="rateYo" itemprop="ratingValue"></div>
 									</figcaption>
 								</figure>
@@ -167,7 +167,33 @@
 								<figure>
 									<img class="customer-img" src="assets/images/diplome.png" alt="Person image">
 									<figcaption>
-										<span itemprop="author">Hamza Ben youness</span>
+										<span itemprop="author">Atia Naim</span>
+										<div class="rateYo" itemprop="ratingValue"></div>
+									</figcaption>
+								</figure>
+							</div>
+							</div>
+						</div>
+						<div class="customer-item" itemscope itemtype="http://schema.org/Rating">
+						<div class="border">
+							<div class="customer">
+								<figure>
+									<img class="customer-img" src="assets/images/diplome.png" alt="Person image">
+									<figcaption>
+										<span itemprop="author">Feres Adouani</span>
+										<div class="rateYo" itemprop="ratingValue"></div>
+									</figcaption>
+								</figure>
+							</div>
+							</div>
+						</div>
+						<div class="customer-item" itemscope itemtype="http://schema.org/Rating">
+						<div class="border">
+							<div class="customer">
+								<figure>
+									<img class="customer-img" src="assets/images/diplome.png" alt="Person image">
+									<figcaption>
+										<span itemprop="author">Rayen Ayed</span>
 										<div class="rateYo" itemprop="ratingValue"></div>
 									</figcaption>
 								</figure>
