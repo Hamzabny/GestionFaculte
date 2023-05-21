@@ -6,6 +6,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\EmployesController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\ProfesseurController;
+use App\Http\Controllers\ChefDepController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,7 @@ Route::prefix('professeur')->middleware('auth','isProfesseur')->group(function (
     Route::get('/etudiant-list', [ProfesseurController::class, 'index'])->name('professeur.etudiant-list');
 
     // Edit
-    Route::get('/edit-student/{id}', [ProfesseurController::class, 'editStudent']);
+    Route::get('/edit-student2/{id}', [ProfesseurController::class, 'editStudent']);
     Route::post('/save-student/{id}', [ProfesseurController::class, 'updateStudent']);
 
     // Delete
@@ -54,14 +55,14 @@ Route::prefix('chefDep')->middleware('auth','isChefDep')->group(function () {
     Route::get('/InterfaceChefDep', function () {
         return view('InterfaceChefDep');
     })->name('InterfaceChefDep');
-    Route::get('/etudiant-list', [ProfesseurController::class, 'index'])->name('chefDep.etudiant-list');
+    Route::get('/etudiant-list_CD', [ChefDepController::class, 'index_CD'])->name('chefDep.etudiant-list_CD');
 
     // Edit
-    Route::get('/edit-student/{id}', [ProfesseurController::class, 'editStudent']);
-    Route::post('/save-student/{id}', [ProfesseurController::class, 'updateStudent']);
+    Route::get('/edit-student_CD/{id}', [ChefDepController::class, 'editStudent_CD']);
+    Route::post('/save-student_CD/{id}', [ChefDepController::class, 'updateStudent_CD']);
 
     // Delete
-    Route::get('/delete-student/{id}', [ProfesseurController::class, 'deleteStudent']);
+    Route::get('/delete-student_CD/{id}', [ChefDepController::class, 'deleteStudent_CD']);
 });
 
 

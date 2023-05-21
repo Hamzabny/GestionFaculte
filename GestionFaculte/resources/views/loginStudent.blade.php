@@ -65,6 +65,7 @@
     </style>
 </head>
 <body>
+<a class="nav-link" href="{{ route('registrationStudent') }}"><button class="btn btn-dark">Register</button></a>
     <div class="signup-form">
         <div class="container" role="document">
             <div>

@@ -324,7 +324,7 @@ return [
                 'icon' => 'fas fa-fw fa-list',
                 ],  [
                     'text' => 'List of etudiant C',
-                    'url'  => 'chefDep/etudiant-list',
+                    'url'  => 'chefDep/etudiant-list_CD',
                     'icon' => 'fas fa-fw fa-list',
                     ],
             ],

@@ -31,6 +31,8 @@
                     <th>Prénom</th>
                     <th>Email</th>
                     <th>Date de naissance</th>
+                    <th>classe</th>
+                    <th>departement</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -42,9 +44,12 @@
                     <td>{{ $l->prenom }}</td>
                     <td>{{ $l->email }}</td>
                     <td>{{ $l->datedenaissance }}</td>
+                    <td>{{ $l->classe_id }}</td>
+                    <td>{{ $l->departement_id }}</td>
+                    
                     <td>
-                        <a onclick="return confirm('Vous souhaitez modifier?')" href="{{ url('chefDep/edit-student/'.$l->id) }}"><i class="bi bi-pencil-square text-success"></i></a>
-                        <a onclick="return confirm('Vous souhaitez supprimer?')" href="{{ url('chefDep/delete-student/'.$l->id) }}"><i class="bi bi-trash-fill text-danger"></i></a>
+                        <a onclick="return confirm('Vous souhaitez modifier?')" href="{{ url('chefDep/edit-student_CD/'.$l->id) }}"><i class="bi bi-pencil-square text-success"></i></a>
+                        <a onclick="return confirm('Vous souhaitez supprimer?')" href="{{ url('chefDep/delete-student_CD/'.$l->id) }}"><i class="bi bi-trash-fill text-danger"></i></a>
                     </td>
                 </tr>
                 @endforeach
