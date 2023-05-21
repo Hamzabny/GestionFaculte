@@ -24,6 +24,20 @@
                 </a>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="small-box bg-primary">
+                <div class="inner">
+                    <h3>{{\App\Models\Departement::count()}}</h3>
+                    <p>Employes</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-building"></i> <!-- Updated icon class -->
+                </div>
+                <a href="{{url('admin/employes/departementList')}}" class="small-box-footer">
+                    More info <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
     </div>
 @stop
 

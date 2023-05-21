@@ -19,8 +19,10 @@ class EmployesController extends Controller
     {
         //
         $employes = Employe::all();
+        $departements = Departement::all();
         return view('employes.index')->with([
-            'employes' => $employes
+            'employes' => $employes,
+            'departements' => $departements
         ]);
     }
 
@@ -41,6 +43,7 @@ class EmployesController extends Controller
         'departements' => $departements
     ]);
 }
+
 
     /**
      * Store a newly created resource in storage.
@@ -91,7 +94,7 @@ class EmployesController extends Controller
             "employe" => $employe
         ]);
     }
-    
+ 
 
     /**
      * Show the form for editing the specified resource.
