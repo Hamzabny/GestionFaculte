@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
-use App\Models\Professeur;
 use Illuminate\Http\Request;
 
-class ProfesseurController extends Controller
+class ChefDepController extends Controller
 {
     //
     public function index(){
         $listeetu= Student::get();
-        return view('Student-list2', compact('listeetu'));
+        return view('Student-list', compact('listeetu'));
     }
     public function editStudent($id){
         $listeetu = Student::find($id);

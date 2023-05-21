@@ -49,6 +49,24 @@ Route::prefix('professeur')->middleware('auth','isProfesseur')->group(function (
     // Delete
     Route::get('/delete-student/{id}', [ProfesseurController::class, 'deleteStudent']);
 });
+
+Route::prefix('chefDep')->middleware('auth','isChefDep')->group(function () {
+    Route::get('/InterfaceChefDep', function () {
+        return view('InterfaceChefDep');
+    })->name('InterfaceChefDep');
+    Route::get('/etudiant-list', [ProfesseurController::class, 'index'])->name('chefDep.etudiant-list');
+
+    // Edit
+    Route::get('/edit-student/{id}', [ProfesseurController::class, 'editStudent']);
+    Route::post('/save-student/{id}', [ProfesseurController::class, 'updateStudent']);
+
+    // Delete
+    Route::get('/delete-student/{id}', [ProfesseurController::class, 'deleteStudent']);
+});
+
+
+
+
 //admin route
 Route::prefix('admin')->middleware('auth','isAdmin')->group(function () {
     Route::get('/InterfaceAdmin', function () {
