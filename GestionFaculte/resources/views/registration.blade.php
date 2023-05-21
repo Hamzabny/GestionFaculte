@@ -10,9 +10,15 @@
                         <form action="{{ route('postsignup') }}" method="POST">
                             @csrf
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Name" id="name" class="form-control" name="name" autofocus>
-                                @if ($errors->has('name'))
-                                    <span class="text-danger">{{ $errors->first('name') }}</span>
+                                <input type="text" placeholder="Full Name" id="fullname" class="form-control" name="fullname" autofocus>
+                                @if ($errors->has('fullname'))
+                                    <span class="text-danger">{{ $errors->first('fullname') }}</span>
+                                @endif
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="text" placeholder="Registration Number" id="registration_number" class="form-control" name="registration_number" autofocus>
+                                @if ($errors->has('registration_number'))
+                                    <span class="text-danger">{{ $errors->first('registration_number') }}</span>
                                 @endif
                             </div>
                             <div class="form-group mb-3">
