@@ -43,7 +43,6 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-4">
-                <a class="nav-link" href="{{ route('loginStudent') }}"><button class="btn btn-dark">Login</button></a>
                     <div class="card">
                         <h3 class="card-header text-center">Register Student</h3>
                         <div class="card-body">
@@ -78,11 +77,6 @@
                                     @if ($errors->has('datedenaissance'))
                                     <span class="text-danger">{{ $errors->first('datedenaissance') }}</span>
                                     @endif
-                                </div>
-                                <div class="form-group mb-3">
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" name="remember"> Remember Me</label>
-                                    </div>
                                 </div>
                                 <div class="d-grid mx-auto">
                                     <button type="submit" class="btn btn-dark btn-block">Sign up</button>
