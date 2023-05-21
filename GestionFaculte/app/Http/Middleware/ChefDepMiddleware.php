@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ProfesseurMiddleware
+class ChefDepMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,10 +18,7 @@ class ProfesseurMiddleware
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()) {
-            // admin role ==1
-            //user role ==0
-            // professeur role==2
-                    if(Auth::user()->role == '3') {
+                    if(Auth::user()->role == '2') {
                    return $next($request);
                     } else {
                         return redirect('/home')->with('message','Access denied as you are not Professeur!');

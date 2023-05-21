@@ -319,12 +319,17 @@ return [
             'icon' => 'fas fa-fw fa-arrow-alt-circle-right',
             'submenu' =>[
                 [
-                'text' => 'List of etudiant',
+                'text' => 'List of etudiant P',
                 'url'  => 'professeur/etudiant-list',
                 'icon' => 'fas fa-fw fa-list',
-                ],
+                ],  [
+                    'text' => 'List of etudiant C',
+                    'url'  => 'chefDep/etudiant-list_CD',
+                    'icon' => 'fas fa-fw fa-list',
+                    ],
             ],
         ],
+    
     ],
     /*
     |--------------------------------------------------------------------------

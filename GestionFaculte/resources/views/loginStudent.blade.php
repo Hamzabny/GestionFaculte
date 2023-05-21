@@ -65,11 +65,12 @@
     </style>
 </head>
 <body>
+<a class="nav-link" href="{{ route('registrationStudent') }}"><button class="btn btn-dark">Register</button></a>
     <div class="signup-form">
         <div class="container" role="document">
             <div>
                 <div class="row justify-content-center">
-                    <h1 class="card-header text-center">Sign up for free</h1>
+                    <h1 class="card-header text-center">Login</h1>
 
                 </div>
 
@@ -90,7 +91,9 @@
                                 <span class="text-danger">{{ $errors->first('password') }}</span>
                             @endif
                         </div>
-                        <button class="btn btn-dark btn-block" type="submit">Sign up</button>
+                        <div class="d-grid mx-auto">
+                        <button class="btn btn-dark btn-block"type="submit">Sign In</button>
+                        </div>
                         <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
                     </form>
                 </div>

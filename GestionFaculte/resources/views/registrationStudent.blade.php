@@ -79,9 +79,16 @@
                                     @endif
                                 </div>
                                 <div class="form-group mb-3">
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" name="remember"> Remember Me</label>
-                                    </div>
+                                    <input type="hidden" placeholder="Date of Birth" id="dob" class="form-control" name="classe_id">
+                                    @if ($errors->has('classe_id'))
+                                    <span class="text-danger">{{ $errors->first('classe_id') }}</span>
+                                    @endif
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input type="hidden" placeholder="Date of Birth" id="dob" class="form-control" name="departement_id">
+                                    @if ($errors->has('departement_id'))
+                                    <span class="text-danger">{{ $errors->first('departement_id') }}</span>
+                                    @endif
                                 </div>
                                 <div class="d-grid mx-auto">
                                     <button type="submit" class="btn btn-dark btn-block">Sign up</button>
