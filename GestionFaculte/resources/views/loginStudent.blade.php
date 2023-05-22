@@ -65,7 +65,7 @@
     </style>
 </head>
 <body>
-<a class="nav-link" href="{{ route('registrationStudent') }}"><button class="btn btn-dark">Register</button></a>
+
     <div class="signup-form">
         <div class="container" role="document">
             <div>
@@ -92,9 +92,12 @@
                             @endif
                         </div>
                         <div class="d-grid mx-auto">
-                        <button class="btn btn-dark btn-block"type="submit">Sign In</button>
-                        </div>
-                        <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+                            <button class="btn btn-dark btn-block"type="submit">Sign In</button>
+                            </div>
+                            <div class="d-grid mx-auto">
+                                <button class="btn btn-dark btn-block"><a href="{{ route('registrationStudent') }}" style="text-decoration: none; color:white">Register</a></button>
+                                </div>
+                    
                     </form>
                 </div>
             </div>

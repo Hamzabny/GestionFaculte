@@ -93,6 +93,8 @@
                                 <div class="d-grid mx-auto">
                                     <button type="submit" class="btn btn-dark btn-block">Sign up</button>
                                 </div>
+
+                                <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
                             </form>
                         </div>
                     </div>
